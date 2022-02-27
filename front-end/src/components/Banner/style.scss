@@ -1,0 +1,37 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+
+.banner{
+   height: 400px;
+   background-image: url('../../assets/bank-tree.jpeg');
+   background-position: 0% 33%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   position: relative;
+   border: 1px solid black;
+
+   &__infos{
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      width: 350px;
+      padding: 2rem;
+      
+      text-align: left;
+      background-color: white;
+
+   }
+   .subtitle{
+      font-size: 1.5rem;
+      font-weight: bold;
+   }
+   .text{
+      font-size: 1.2rem;
+      margin-top: 0.7rem;
+      
+   }
+}

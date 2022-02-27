@@ -1,0 +1,11 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+.features{
+   @include flex(row, space-between , 0);
+   .feature{
+      flex :1;
+      
+   }
+}
