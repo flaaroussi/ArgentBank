@@ -3,6 +3,7 @@ import Home from "../containers/Home";
 import Error from "../containers/Error";
 import Login from "../containers/Login";
 import Profil from "../containers/Profil";
+import InProgress from "../containers/InProgress";
 
 /** 
  * Routes application
@@ -16,6 +17,7 @@ export default function Router(){
             <Route path="/login" element={<Login />} />
             <Route path="/profil" element={<Profil />} />
             <Route path="*" element={<Error />}  />
+            <Route path="/transactions" element={<InProgress page="Transactions" />}  />
    </Routes>
    
 }  

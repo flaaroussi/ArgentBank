@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import './style.scss'
 
 /**
@@ -6,11 +7,11 @@ import './style.scss'
  * @component
  * @example
  * const keyName = 'Calories'.......................
- * keyValue = 120
- * const KeyUnite = 'kCal'
- * const icon = 'calorie'
+ * keyValue = 120....................
+ * const KeyUnite = 'kCal'.......
+ * const icon = 'calorie'............
   * return (
- *  <CardInfo  keyName={keyName} keyValue={keyValue} KeyUnite={KeyUnite} icon={icon} />
+ *  <Feature  image={image} title={title} description={description} />
  * ).......................
  */
 
@@ -18,11 +19,28 @@ import './style.scss'
 
 export default function Feature({image, title, description}){
    return(
-      <article className="feature">        
-          <img src={image} alt="Chat Icon" class="feature__icon" />
-          <h3 class="feature__title">{title}</h3>
+      <article className="feature"> 
+          <h2 className="sr-only">Features</h2>       
+          <img src={image} alt="Chat Icon" className="feature__icon" />
+          <h3 className="feature__title">{title}</h3>
           <p>{description}</p>      
       </article>
-      
    )
 }
+
+//Validate the type of properties
+Feature.propTypes ={
+   /**
+    * 
+    */
+    image: propTypes.string,
+   /**
+    *
+    */
+    title: propTypes.string,
+   /**
+    * 
+    */
+    description: propTypes.string,
+   
+ }

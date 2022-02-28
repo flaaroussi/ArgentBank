@@ -4,7 +4,7 @@ import './style.scss'
 import { features } from '../../datas/features'
 
 export default function Home(){
-   return<main className="main-home">
+   return<main className="main">
       <Banner />
       <section className='features'>
             {features.map((item)=>{
