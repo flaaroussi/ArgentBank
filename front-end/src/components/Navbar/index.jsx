@@ -1,7 +1,8 @@
 import { NavLink, Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './style.scss';
 import Logo  from '../../assets/argentBankLogo.png'
+import { resetToken } from '../../redux/actions/authActions';
 
 
 /**
@@ -14,11 +15,17 @@ import Logo  from '../../assets/argentBankLogo.png'
  */
 
 function Navbar(){
+   const dispach = useDispatch()
 
-   const userConnectedToken = useSelector((state) => state.authReducer.token) 
-
-   console.log(userConnectedToken)
    
+   const userConnected = useSelector((state) => state.userReducer)
+
+   const doLogout = () =>{
+      dispach(resetToken())
+   }
+
+
+
    return (<nav className="navbar">
             <Link to="/" className="navbar__logo" >
                <img className="navbar__logo__img" src={Logo} alt='Argent Bank Logo' />
@@ -26,19 +33,24 @@ function Navbar(){
             </Link> 
            
             <div className="navbar__item">
-                 {userConnectedToken ? (<>  <NavLink to='/profil' >
-                                          <i className="fa fa-user-circle"></i>
-                                          <span>user connected</span>
-                                       </NavLink>
-                                       <NavLink to='/signout'>
-                                          <i className="fa fa-user-circle"></i>
-                                          <span>user connecté</span>
-                                       </NavLink>
-                                    </>) : ( <NavLink to='/login' >
-                                                <i className="fa fa-user-circle"></i>
-                                                <span>Sign In</span>
-                                             </NavLink>    
-                                           )  
+                 {
+                     userConnected.token ? (
+                           <>
+                              <NavLink to='/profil' >
+                                 <i className="fa fa-user-circle"></i>
+                                 <span>{userConnected.user?userConnected.user.firstName : ''}</span>
+                              </NavLink>
+                              <NavLink onClick={doLogout}   to='/'>
+                                 <i className="fa fa-sign-out"></i>
+                                 <span>Sign Out</span>
+                              </NavLink>
+                           </>
+                           ) : ( 
+                              <NavLink to='/login' >
+                                 <i className="fa fa-user-circle"></i>
+                                 <span>Sign In</span>
+                              </NavLink>    
+                              )  
                   }         
             </div>
             

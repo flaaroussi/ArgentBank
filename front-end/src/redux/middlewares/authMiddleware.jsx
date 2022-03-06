@@ -40,6 +40,7 @@ export function authLogin(email, password){
 
 
 
+
 //Validate the type of properties
 authLogin.propTypes ={
    /**

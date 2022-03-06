@@ -27,11 +27,13 @@ export default function Login(){
       
       //setSessionItem('token', null)      
    }
+
    //récupérer le state
-   const authToken = useSelector((state) => state.authReducer) 
-   console.log(authToken)
+   const authToken = useSelector((state) => state.userReducer) 
+ 
    // si le token existe
-   if(authToken.token){        
+   if(authToken.token){     
+      //alors redirection vers pages profile   
       return <Navigate to="/profil"/>
    }
 
@@ -58,7 +60,7 @@ export default function Login(){
                </form>
                
                {
-                  authToken.error && <div className=''>Votre login ou mot de passe est invalide</div>
+                  authToken.error && <div className='message-error'>Your login or password is invalid</div>
                }
                
       </section>

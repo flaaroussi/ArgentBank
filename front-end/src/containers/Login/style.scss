@@ -8,6 +8,7 @@
    border-color: #00bc77;
    background-color: #00bc77;
    color: #fff;
+   border: none;
  }
  
  .sign-in-content {
@@ -45,4 +46,9 @@
  .input-wrapper input {
    padding: 5px;
    font-size: 1.2rem;
+ }
+ .message-error{
+   color: red;
+   font-size: 14px;
+   padding-top: 10px;
  }

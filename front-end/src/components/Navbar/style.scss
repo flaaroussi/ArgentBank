@@ -7,12 +7,15 @@
       max-width: 100%;
       width: 200px;
    }
-   &__item:hover {
-      text-decoration: underline;
-    }
+  
    &__item{
     text-decoration: none;
-    margin-right: 0.5rem;
+    a{
+       margin-left: 20px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
    }
    span{
       font-weight: bold;
