@@ -1,4 +1,5 @@
 import { NavLink, Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import './style.scss';
 import Logo  from '../../assets/argentBankLogo.png'
 
@@ -14,7 +15,9 @@ import Logo  from '../../assets/argentBankLogo.png'
 
 function Navbar(){
 
-   const userConnected = true;
+   const userConnectedToken = useSelector((state) => state.authReducer.token) 
+
+   console.log(userConnectedToken)
    
    return (<nav className="navbar">
             <Link to="/" className="navbar__logo" >
@@ -23,7 +26,7 @@ function Navbar(){
             </Link> 
            
             <div className="navbar__item">
-                 {userConnected ? (<>  <NavLink to='/profil' >
+                 {userConnectedToken ? (<>  <NavLink to='/profil' >
                                           <i className="fa fa-user-circle"></i>
                                           <span>user connected</span>
                                        </NavLink>

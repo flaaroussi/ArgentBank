@@ -22,10 +22,10 @@ export default function InProgress({page}){
       }, 1000
    )
 
-   return(<article className="under">
+   return(<main className="main">
      <img src={underImage} alt="" className="underImage"/>
      <div>
          Page {page} bientôt disponible
      </div>
-   </article>)
+   </main>)
 }

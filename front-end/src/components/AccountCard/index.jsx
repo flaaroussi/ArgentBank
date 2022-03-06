@@ -43,7 +43,7 @@ AccountCard.propTypes ={
    /**
     *
     */
-   amount: propTypes.number,
+   amount: propTypes.string,
    /**
     * 
     */
