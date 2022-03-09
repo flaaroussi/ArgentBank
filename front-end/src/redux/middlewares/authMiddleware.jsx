@@ -28,27 +28,18 @@ export function authLogin(email, password){
       .then((response) => {
          const token = response.data.body.token;
          dispach(authSuccess(token));//envoyer une demande de mise à jour du state token.
-         //setSessionItem('token', token);
+         sessionStorage.setItem('token', token)
       })
       .catch((error) => {
          dispach(authError(error));
-         //setSessionItem('token', null);
+         sessionStorage.setItem('token', '')
       })
    }
 }
 
 
-
-
-
 //Validate the type of properties
 authLogin.propTypes ={
-   /**
-    * 
-    */
    email: propTypes.string,
-   /**
-    *
-    */
-    password: propTypes.string,
-   }
+   password: propTypes.string,
+}

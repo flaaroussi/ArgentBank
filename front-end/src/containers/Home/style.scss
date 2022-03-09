@@ -4,6 +4,9 @@
 
 .features{
    @include flex(row, space-between , 0);
+   @include responsive (smartphone) {
+      @include flex(column, space-between , 0);
+   }  
    .feature{
       flex :1;
    }

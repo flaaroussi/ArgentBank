@@ -5,6 +5,7 @@ import Logo  from '../../assets/argentBankLogo.png'
 import { resetToken } from '../../redux/actions/authActions';
 
 
+
 /**
  * @description Component for showing Navbar navigation.
  *
@@ -22,6 +23,7 @@ function Navbar(){
 
    const doLogout = () =>{
       dispach(resetToken())
+      sessionStorage.removeItem('token')
    }
 
 
@@ -36,7 +38,7 @@ function Navbar(){
                  {
                      userConnected.token ? (
                            <>
-                              <NavLink to='/profil' >
+                              <NavLink to='/profile' >
                                  <i className="fa fa-user-circle"></i>
                                  <span>{userConnected.user?userConnected.user.firstName : ''}</span>
                               </NavLink>

@@ -1,5 +1,9 @@
 export const initialStates = {
    token: null,
    error: null,
-   user: null,
+   user: {
+      firstName:null,
+      lastName:null
+   },
+   editUser:0
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { userSucces } from '../actions/uerActions';
+import { userSuccess, userUpdate  } from '../actions/uerActions';
 
 
 
@@ -12,12 +12,12 @@ const authEndpoint = `${API_URI}/user/profile`;
  * @param {*} token 
  * @returns 
  */
-export function getProfile (token){
+export function getProfile (){
 
    const header ={
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
       }
     }
    return(dispach) =>{
@@ -28,7 +28,44 @@ export function getProfile (token){
          header
       )
       .then((response) => {
-        dispach(userSucces(response.data.body)) //mettre à jour le state
+        dispach(userSuccess(response.data.body)) //mettre à jour le state
+       
+      })
+      .catch((error) =>{
+         console.log(error)
+      })
+   }
+}
+
+
+/**
+ * @description mettre à jour le profil
+ * @param {*} 
+ * @returns 
+ */
+ export function updateProfile ( firstName, lastName){
+
+   const header ={
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+      }
+    }   
+
+   return(dispach) =>{
+      axios
+      .put(authEndpoint,
+         {
+            "firstName": firstName,
+            "lastName": lastName
+         }
+         ,
+         header
+      )
+      .then((response) => {
+         let user = response.data.body
+         user.editUser = 1 // chnage state update donnée user
+        dispach(userUpdate(user)) //mettre à jour le state
        
       })
       .catch((error) =>{

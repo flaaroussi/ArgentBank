@@ -18,7 +18,7 @@ export default function InProgress({page}){
    // Redirect user to dashboard page after 10s
    setTimeout(
       () => {
-         navigate(`/profil`);
+         navigate(`/profile`);
       }, 1000
    )
 
