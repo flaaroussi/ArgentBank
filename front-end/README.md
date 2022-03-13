@@ -1,69 +1,56 @@
+# ArgentBank
 
-# ARGENT BANK
+    Projet fictif de formation n°13 | OpenClassrooms
 
-Argent bank is a React web application created for the new user authentication system allowing customers to log in and manage their accounts and profile.
+**Personnal bank account manager**
 
-## Prerequisites
+> PROBLEMATIQUE
 
-- [Node.js (v16.13.1)](https://nodejs.org/en/)
-- [Recommended IDE (Visual Studio Code)](https://code.visualstudio.com)
+Utilisez une API pour une application bancaire
+
+> BESOINS
+
+- Authentification : accès sécurisé au service pour gérer son compte bancaire et son profil utilisateur
+- API Transactions : modèle de structure backend pour cette fonctionnalité
+
+## Compétences développées
+
+- [x] Implémenter un gestionnaire d'état dans une application React `REDUX`
+- [x] Interagir avec une API `AXIOS | MongoDB`
+- [x] Implémenter un système d'authentification à une API sécurisée `JWT token`
+- [x] Modéliser une API `SWAGGER | NodeJS`
+
+## Bibliothèques
+    REACT
 
 ## Installation
 
-First of all, clone the project with HTTPS
+### Prérequis
 
-```bash
-  git clone https://github.com/flaaroussi/FaizaLaaroussi_13_24022022.git ARGENT BANK
-  cd SportSee
-```
+* [Git](https://git-scm.com/)
+* [NodeJS](https://nodejs.org/fr/)
+* [npm](https://www.npmjs.com/)
 
-### Back-end :::::::::::::::::::::::::::
+### Dépendances
 
-If you want to install mocked backend for the demo version, you need 
-to be inside the root of the ARGENT BANK folder, and run these commands (install dependencies, and run locally).
+*  [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+*  [Redux](https://redux.js.org/introduction/getting-started)
+*  [react-redux](https://react-redux.js.org/introduction/getting-started)
+*  [redux-thunk](https://redux.js.org/usage/writing-logic-thunks)
+*  [axios](https://www.npmjs.com/package/axios)
+*  [prop-types](https://www.npmjs.com/package/prop-types)
+*  [sass] (https://sass-lang.com/)
 
-```
-cd back-end
-yarn install
-npm run dev:server
-```
+### Etape 1
+clone le projet `git clone https://github.com/flaaroussi/FaizaLaaroussi_13_24022022.git`
 
-### Front-end
-
-If you are on the API folder, make sure to come back to the root folder of the project with
-
-```
-cd front-end
-yarn install
-yarn start
-```
-
-    
-## Generate documentation
-
-First of all, you'll need to be located at the root of the project.
-
-```
-cd front-end
-yarn docs
-```
-
-Then your documentation will be generated, and now you have to go on the docs folder with this :
-
-```
-cd docs
-```
-
-
-## Dependencies
-
-| Name              | Version |
-| ----------------- | ------- |
-| react            | 17.0.2 |
-| react-dom        | 17.0.2 |
-| react-router-dom | 6.2.1  |
-| react-scripts    | 5.0.0  |
-| jsdoc             | 3.6.10   |
-| Better Docs       | 2.7.1   |
-
-
+### Etape 2 : Lancement du back-end 
+- [ ] Aller dans ce dossier : `cd back-end`
+- [ ] Installer ses dépendances : `npm install`
+- [ ] Le lancer sur le port par défaut (3001) : `npm run dev:server`
+- [ ] Créer une base de donnée minimale : `npm run populate-db`
+- Pour plus de détail sur back-end voir la page https://github.com/flaaroussi/FaizaLaaroussi_13_24022022/tree/main/back-end#readme
+### Etape 2 : Lancement du front-end
+- [ ] Aller dans ce dossier : `cd front-end`
+- [ ] Installer ses dépendances : `npm install`
+- [ ] Lancer l'application : `npm start`
