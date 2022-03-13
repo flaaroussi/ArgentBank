@@ -3,8 +3,7 @@ import './style.scss'
 import { useRef } from 'react'
 import { updateProfile } from '../../redux/middlewares/userMiddleware'
 import { Link, Navigate } from 'react-router-dom'
-
-
+import { userUpdateForm  } from '../../redux/actions/uerActions';
 
 
 /**
@@ -31,12 +30,13 @@ export default function FormInfos(){
       //mettre a jour le profil 
    }
 
-   if(userState.editUser === 1){
-      return <Navigate to="/profile"/>
+   const doCloseForm = (event) =>{
+      event.preventDefault(); 
+      dispatch(userUpdateForm(0)) 
    }
    
-   return<main className="main bg-dark">
-      <section className="sign-in-content">
+   return <section className="sign-in-content formupdate">
+         <i className="fa fa-user-circle sign-in-icon"></i>
          <form onSubmit={doUpdate}>
 
             <div className="input-wrapper">
@@ -47,12 +47,12 @@ export default function FormInfos(){
             <div className="input-wrapper">
                <label htmlFor="lasttName" >Last Name</label>
                <input type="text" id="lasttName" defaultValue={userState.user.lastName} ref={inputLasttName}/>
-            </div>
-
-            <Link to="/profile" className="sign-in-button cancel">Cancel</Link> 
-            <button type='submit' className="sign-in-button">Save</button> 
-               
+            </div> 
+            <div className='form-button'>
+               <button type='submit' className="sign-in-button">Save</button> 
+               <button onClick={doCloseForm} className="sign-in-button cancel">Cancel</button>   
+            </div>           
+                       
          </form>
       </section>   
-   </main>
 }

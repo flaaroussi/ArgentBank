@@ -1,4 +1,6 @@
-import { USER_GET_SUCCESS, 
+import { 
+   USER_GET_SUCCESS, 
+   USER_UPDATE_FORM,
    USER_UPDATE_SUCCESS,
    USER_UPDATE_ERROR
  } from './actionsTypes'
@@ -10,7 +12,7 @@ import { USER_GET_SUCCESS,
 
 export const userSuccess =(user) => (
    {
-         type : "USER_GET_SUCCESS",
+         type : USER_GET_SUCCESS,
          user,
    }
 )
@@ -19,7 +21,17 @@ export const userSuccess =(user) => (
  *  erreur auth user success??????????????
  */
 
-
+/**
+ * Action pour mettre à jour la state de basculement entre form user et profil
+ * @param {*} isUpadte 
+ * @returns 
+ */
+ export const userUpdateForm =(isUpadte) => (
+   {
+         type : USER_UPDATE_FORM,
+         isUpadte,
+   }
+)
 
 /**
  * Action pour mettre à jour les données personnelles
@@ -34,7 +46,7 @@ export const userUpdate =(user) => (
 )
 
 /**
- * ???????????????????????????????????????????
+ * 
  * @param {*} error 
  * @returns 
  */

@@ -1,3 +1,6 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
 .sign-in-button {
    display: block;
    width: 100%;
@@ -30,4 +33,25 @@
 .input-wrapper input {
    padding: 5px;
    font-size: 1.2rem;
+}
+
+.formupdate{
+   width: 500px;
+   margin-bottom: 40px;
+   @include responsive (smartphone) {
+      width: 80%;
+   }  
+   .form-button{
+      @include flex(row, space-between , 0);      
+      button{
+         width: 45%;
+      }
+      @include responsive (smartphone) {
+         @include flex(column, space-between , 0);  
+         button{
+            width: 100%;
+         }
+      } 
+   }
+   
 }

@@ -6,13 +6,12 @@ import './style.scss'
  *
  * @component
  * @example
- * const keyName = 'Calories'.......................
- * keyValue = 120....................
- * const KeyUnite = 'kCal'.......
- * const icon = 'calorie'............
+ * const image = 'image'
+ * const title = 'You are our #1 priority'
+ * const description = 'The more you save with us, the higher your interest rate will be!'
   * return (
  *  <Feature  image={image} title={title} description={description} />
- * ).......................
+ * )
  */
 
 

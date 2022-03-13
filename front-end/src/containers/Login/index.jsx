@@ -6,16 +6,18 @@ import { Navigate } from 'react-router-dom';
 
 /**
  * @description component pour afficher et envoyer le formulaire
- * @returns 
+ * @returns (<Login />)
  */
 export default function Login(){
+
+   const authToken = useSelector((state) => state.userReducer) 
    const dispatch = useDispatch();
-   console.log(dispatch)
    const inputEmail = useRef();
    const inputPassword =useRef();
    const inputRemenberme = useRef()
+
    /**
-    * Si l'email est enregistré et remeber est coché on affiche l'email et la case coché 
+    * Si l'email est enregistré et remember me est coché on affiche l'email et la case coché 
     * aprés chaque chargement de la page dans le formulaire
     */
    useEffect(() => {
@@ -30,7 +32,7 @@ export default function Login(){
 
 
    /**
-    * Fonction pour executer le middleware
+    * Fonction pour exécuter le middleware
     * @param {*} event 
     */
    const doSignin = (event) => {
@@ -44,15 +46,11 @@ export default function Login(){
          sessionStorage.removeItem('rememberMe')
          sessionStorage.removeItem('email')
       }
-        
    }
 
-   //récupérer le state
-   const authToken = useSelector((state) => state.userReducer) 
- 
    // si le token existe
    if(authToken.token){     
-      //alors redirection vers pages profile   
+      //alors redirection vers page profile   
       return <Navigate to="/profile"/>
    }
 

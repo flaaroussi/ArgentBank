@@ -6,7 +6,7 @@ import {useEffect} from 'react'
 import React from 'react'
 
 /**
- * 
+ * Affichage page acceuil
  * @returns 
  */
 export default function Home(){

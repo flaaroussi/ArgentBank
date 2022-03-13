@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { userSuccess, userUpdate  } from '../actions/uerActions';
+import { userSuccess, userUpdate ,userUpdateError,userUpdateForm } from '../actions/uerActions';
 
 
 
@@ -64,12 +64,12 @@ export function getProfile (){
       )
       .then((response) => {
          let user = response.data.body
-         user.editUser = 1 // chnage state update donnée user
+        dispach(userUpdateForm(0)) // change state update donnée user
         dispach(userUpdate(user)) //mettre à jour le state
        
       })
       .catch((error) =>{
-         console.log(error)
+         dispach(userUpdateError(error))
       })
    }
 }

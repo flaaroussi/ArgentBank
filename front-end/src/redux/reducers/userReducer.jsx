@@ -3,7 +3,8 @@ import {
    AUTH_SUCCESS, 
    AUTH_LOGOUT_SUCCESS,
    USER_GET_SUCCESS,
-   USER_UPDATE_SUCCESS 
+   USER_UPDATE_SUCCESS,
+   USER_UPDATE_FORM
 } from "../actions/actionsTypes";
 import { initialStates } from "../initialStates/initialStates";
 
@@ -15,6 +16,7 @@ import { initialStates } from "../initialStates/initialStates";
  */
 
 export const userReducer = (state = initialStates, action) => {
+   console.log(action)
       switch(action.type){
          case AUTH_SUCCESS:
             {
@@ -42,7 +44,6 @@ export const userReducer = (state = initialStates, action) => {
                return {
                   ...state,
                   user: action.user,
-                  editUser : 0
                }
          }
             
@@ -51,9 +52,16 @@ export const userReducer = (state = initialStates, action) => {
                return {
                   ...state,
                   user: action.user,
-                  editUser : 1
                }
          }
+         case USER_UPDATE_FORM:
+            {
+               return {
+                  ...state,
+                  editUser : action.isUpadte
+               }
+         }
+
 
 
 

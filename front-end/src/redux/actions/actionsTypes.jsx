@@ -14,6 +14,8 @@ export const AUTH_LOGOUT_SUCCESS = "AUTH_LOGOUT_SUCCESS"
 /**
  * Création d'un utilisateur actions types
  */
+ 
+ export const USER_UPDATE_FORM = "USER_UPDATE_FORM"
 export const USER_GET_SUCCESS = "USER_GET_SUCCESS"
 export const USER_GET_ERROR = "USER_GET_ERROR"
 
